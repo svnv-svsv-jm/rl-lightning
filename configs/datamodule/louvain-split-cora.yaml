@@ -1,0 +1,17 @@
+_target_: brainiac_2.datasets.GeometricDatamodule
+dataset:
+  _target_: brainiac_2.datasets.LouvainSplitDataset
+  root: ${paths.data_dir}
+  name: Cora
+  dataset:
+    _target_: torch_geometric.datasets.Planetoid
+    root: ${paths.data_dir}
+    name: Cora
+    split: public
+batch_size: 1
+split: [0.4, 0.2] # (train, val)
+# How many subprocesses to use for data loading. 0 means that the data will be loaded in the main process
+num_workers: 2
+pin_memory: True
+# Persistent workers need num_workers>0
+persistent_workers: True

@@ -1,0 +1,22 @@
+_target_: brainiac_2.models.WGANGP
+latent_dim: 100
+shape:
+- 3
+- 64
+- 64
+generator_hidden_dims:
+- 512
+- 512
+- 1024
+generator_last_activation: null
+discriminator_hidden_dims:
+- 2048
+- 512
+- 256
+discriminator_last_activation: null
+learning_rate: 0.00002
+beta1: 0.9
+beta2: 0.999
+discriminator_opt_freq: 5
+is_wasserstein: false
+lambda_gp: 10.0

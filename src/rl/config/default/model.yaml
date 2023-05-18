@@ -1,0 +1,4 @@
+model:
+  name: DQN
+  params:
+    gamma: 0.99

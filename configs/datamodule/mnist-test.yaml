@@ -1,0 +1,3 @@
+_target_: brainiac_2.datasets.MNISTDataModule
+root: ${paths.data_dir}
+split: 0.05

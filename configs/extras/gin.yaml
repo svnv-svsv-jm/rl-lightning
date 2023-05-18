@@ -1,0 +1,20 @@
+# disable python warnings if they annoy you
+ignore_warnings: False
+
+# ask user for tags if none are provided in the config
+enforce_tags: True
+
+# pretty print config tree at the start of the run using Rich library
+print_config: True
+
+
+# common args for model and datamodule
+n_steps: 2
+n_sampled_nodes: 20
+
+dataset:
+  _target_: torch_geometric.datasets.Planetoid
+  root: ${paths.data_dir}
+  name: Cora
+  split: full
+

@@ -1,0 +1,4 @@
+tsne:
+  _target_: brainiac_2.callbacks.tsne_embedding.TSNE
+  run_immediately: True
+  log_every_n_epochs: 50

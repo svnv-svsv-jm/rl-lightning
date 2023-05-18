@@ -1,0 +1,14 @@
+_target_: brainiac_2.datasets.LightningNodeDatamodule
+root: ${paths.data_dir}
+dataset: ${extras.dataset}
+batch_size: 16
+n_steps: ${extras.n_steps}
+n_sampled_nodes: ${extras.n_sampled_nodes}
+# How many subprocesses to use for data loading. 0 means that the data will be loaded in the main process
+num_workers: 2
+pin_memory: True
+# Persistent workers need num_workers>0
+persistent_workers: True
+# Split
+all_nodes: True
+# swap_train_with: val

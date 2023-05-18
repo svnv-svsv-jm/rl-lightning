@@ -1,0 +1,16 @@
+_target_: brainiac_2.datasets.LightningNodeDatamodule
+root: ${paths.data_dir}
+dataset:
+  _target_: torch_geometric.datasets.Planetoid
+  root: ${paths.data_dir}
+  name: Cora
+  split: full
+batch_size: 1
+n_steps: 2
+n_sampled_nodes: 300
+use_all: False
+# How many subprocesses to use for data loading. 0 means that the data will be loaded in the main process
+num_workers: 2
+pin_memory: True
+# Persistent workers need num_workers>0
+persistent_workers: True

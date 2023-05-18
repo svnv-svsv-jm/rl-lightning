@@ -1,0 +1,19 @@
+# PyLit Trainer's params. They must exist in the official doc or an error will be raised.
+# Make sure to override these in a dedicated YAML config file for your experiments if you want to change them, and not change them here directly.
+trainer:
+  gpus: 1
+  weights_summary: 'full'
+  check_val_every_n_epoch: 3
+  num_sanity_val_steps: 2
+  min_epochs: 50
+  max_epochs: 100
+  # Logging
+  default_root_dir: "/src/tensorboard"
+  log_every_n_steps: 1000
+  flush_logs_every_n_steps: 900
+  # Gradient clipping
+  gradient_clip_val: 10.0
+  gradient_clip_algorithm: 'value'
+  # Checkpointing
+  # Use this field if you want to resume from a pre-trained model: you must pass the path to the model checkpoint. Example:
+  # resume_from_checkpoint: /src/checkpoints/model.pth

@@ -1,0 +1,4 @@
+_target_: brainiac_2.datasets.GridDatamodule
+batch_size: 32
+split: [0.4, 0.1]
+root: ${paths.data_dir}

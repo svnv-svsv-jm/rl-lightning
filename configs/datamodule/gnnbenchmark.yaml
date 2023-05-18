@@ -1,0 +1,8 @@
+_target_: brainiac_2.datasets.GeometricDatamodule
+dataset:
+    _target_: torch_geometric.datasets.GNNBenchmarkDataset
+    root: ${paths.data_dir}
+    name: CIFAR10
+batch_size: 8
+split: [0.4, 0.1]
+use_all: True

@@ -1,0 +1,7 @@
+_target_: brainiac_2.datasets.GeometricDatamodule
+dataset:
+  _target_: torch_geometric.datasets.TUDataset
+  root: ${paths.data_dir}
+  name: ENZYMES
+batch_size: 32
+split: [0.4, 0.1]

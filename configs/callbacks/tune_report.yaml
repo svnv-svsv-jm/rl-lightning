@@ -1,0 +1,7 @@
+tune_report:
+  _target_: brainiac_2.callbacks.tune_report_callback_from_cfg
+  cfg:
+    on_hook: validation_end
+    metrics:
+      loss: "loss/val"
+      accuracy: "acc/val"

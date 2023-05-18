@@ -1,0 +1,3 @@
+_target_: brainiac_2.models.MNISTClassifier
+normalize: True
+lr: 0.01

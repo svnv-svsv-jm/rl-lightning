@@ -1,0 +1,7 @@
+_target_: brainiac_2.datasets.GeometricDatamodule
+dataset:
+  _target_: torch_geometric.datasets.Planetoid
+  root: ${paths.data_dir}
+  name: Cora
+batch_size: 4
+split: [0.5, 0.4]

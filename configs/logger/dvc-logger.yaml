@@ -1,0 +1,4 @@
+dvclive:
+  _target_: brainiac_2.loggers.DVCLiveLogger
+  save_dvc_exp: True
+  dir: "${paths.output_dir}/dvc/"

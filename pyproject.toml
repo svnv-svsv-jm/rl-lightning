@@ -1,0 +1,110 @@
+[project]
+name = "rl-lightning"
+version = "1.0.0"
+authors = [
+    {name = "Gianmarco Aversano", email = "Gianmarco.Aversano1990@gmail.com"},
+]
+description = "RL models implemented in PyTorch Lightning."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[tool.poetry]
+name = "rl-lightning"
+version = "1.0.0"
+description = "RL models implemented in PyTorch Lightning."
+authors = ["Gianmarco Aversano <Gianmarco.Aversano1990@gmail.com>"]
+license = "LICENSE"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]  # (["."] by default)
+exclude = ["tests", "docs"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+seaborn = {version = "^0.11.2", source = "pypi"}
+loguru = {version = "^0.6.0", source = "pypi"}
+pyrootutils = {version = "^1.0.4", source = "pypi"}
+scikit-optimize = {version = "^0.9.0", source = "pypi"}
+mcint = {version = "0.1.dev5", source = "pypi"}
+pytorch-lightning = {version = "^1.9.0", source = "pypi"}
+lightning-bolts = {version = "^0.6.0.post1", source = "pypi"}
+torch = [{version = "~1.12.0", source = "pytorch", platform = "linux"}, {version = "^2.0.0", platform = "darwin"}]
+torchvision = {version = "*"}
+torchquad = {version = "^0.3.0", source = "pypi"}
+mlflow = {version = "^1.27.0", source = "pypi"}
+tensorboard = {version = "^2.11.2", source = "pypi"}
+rich = {version = "*", source = "pypi"}
+tbparse = {version = "^0.0.7", source = "pypi"}
+opacus = {version = "^1.3.0", source = "pypi"}
+normflows = {version = "^1.4", source = "pypi"}
+pyro-ppl = {version = "^1.8.4", source = "pypi"}
+hydra-core = {version = "^1.3.1", source = "pypi"}
+hydra-optuna-sweeper = {version = "^1.2.0", source = "pypi"}
+pyyaml = {version = "*", source = "pypi"}
+types-pyyaml = {version = "*", source = "pypi"}
+networkx = {version = "^3.0.0", source = "pypi"}
+forceatlas2 = {version = "*", source = "pypi"}
+fa2 = {version = "^0.3.5", source = "pypi", optional = true}
+python-louvain = {version = "^0.16", source = "pypi"}
+graphsim = {version = "*", source = "pypi"}
+pyemd = {version = "*", source = "pypi"}
+k_means_constrained = {version = "*", source = "pypi"}
+ipykernel = {version = "^6.21.2", source = "pypi"}
+jupyter = {version = "*", source = "pypi"}
+jupyter-contrib-nbextensions = {version = "^0.7.0", source = "pypi"}
+ipywidgets = {version = "^8.0.4", source = "pypi"}
+fastparquet = {version = "^2023.4.0", source = "pypi"}
+libpysal = {version = "^4.7.0", source = "pypi"}
+contextily = {version = "^1.3.0", source = "pypi"}
+geopandas = {version = "^0.13.0", source = "pypi"}
+pyarrow = {version = "^12.0.0", source = "pypi"}
+awscli = {version = "^1.27.130", source = "pypi"}
+boto3 = {version = "^1.26.130", source = "pypi"}
+aws2 = {version = "^0.2.7", source = "pypi"}
+dvc = {version = "^2.56.0", source = "pypi"}
+dvclive = "^2.9.0"
+gym = "^0.26.2"
+gputil = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+virtualenv = {version = "^20.21.0", source = "pypi"}
+msgpack = {version = "^1.0.5", source = "pypi"}
+nbmake = {version = "*", source = "pypi"}
+black = {version = "*", source = "pypi"}
+pytest = {version = "*", source = "pypi"}
+mypy = {version = "*", source = "pypi"}
+pylint = {version = "*", source = "pypi"}
+pytest-pylint = {version = "*", source = "pypi"}
+pytest-mypy = {version = "*", source = "pypi"}
+pytest-cov = {version = "*", source = "pypi"}
+pytest-testmon = {version = "1.4.5", source = "pypi"}
+pytest-xdist = {version = "*", source = "pypi"}
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu113" #cu116
+secondary = true
+
+# [[tool.poetry.source]]
+# name = "torch_stable"
+# url = "https://download.pytorch.org/whl/torch_stable.html"
+# secondary = true
+
+# https://data.pyg.org/whl/torch-1.12.0+cu113.html
+# [[tool.poetry.source]]
+# name = "pyg"
+# url = "https://data.pyg.org/whl/torch-1.12.0+cu113.html"
+# secondary = true
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+

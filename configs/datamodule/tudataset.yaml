@@ -1,0 +1,7 @@
+_target_: brainiac_2.datasets.GeometricDatamodule
+dataset:
+  _target_: torch_geometric.datasets.TUDataset
+  root: ${paths.data_dir}
+  name: garbage # Must override ! See: https://chrsmrrs.github.io/datasets/docs/datasets/
+batch_size: 32
+split: [0.4, 0.1]

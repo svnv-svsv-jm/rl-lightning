@@ -1,0 +1,16 @@
+_target_: brainiac_2.datasets.LightningNodeDatamodule
+root: ${paths.data_dir}
+dataset:
+  _target_: torch_geometric.datasets.Planetoid
+  root: ${paths.data_dir}
+  name: CiteSeer
+  split: full
+batch_size: 4
+n_steps: 3
+n_sampled_nodes: 3000
+use_all: True
+# How many subprocesses to use for data loading. 0 means that the data will be loaded in the main process
+num_workers: 2
+pin_memory: True
+# Persistent workers need num_workers>0
+persistent_workers: True

@@ -1,0 +1,41 @@
+# @package _global_
+
+defaults:
+  - extras: default.yaml
+  - paths: default.yaml
+  - hydra: default.yaml
+  - callbacks: default-dummysgg.yaml
+  - logger: tensorboard.yaml
+  - datamodule: nodedata.yaml
+  - model: gbt.yaml
+  - trainer: gpu.yaml
+  - privacy: no.yaml
+  - override hydra/sweeper: optuna
+  - override hydra/sweeper/sampler: tpe
+  # - override hydra/launcher: ray
+  - _self_
+
+datamodule:
+  use_all: True
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    direction: minimize
+    n_trials: 30
+    n_jobs: 1
+    params:
+      model.latent_dim: interval(4, 64)
+      model.weight_decay: interval(0.001, 0.5)
+      model.p_x: interval(0, 1)
+      model.p_e: interval(0, 1)
+      model.num_layers: interval(1, 8)
+      model.hidden_size: interval(32, 256)
+      model.heads: interval(2, 8)
+optimize_metric: loss/train
+
+ckpt_path: null
+
+stage: fit
+tag: GBT/${get_data_name:${datamodule}}/${stage}/rm_edges${callbacks.dummysgg.dummysgg_kwargs.rm_edges}
+

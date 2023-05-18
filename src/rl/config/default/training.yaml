@@ -1,0 +1,10 @@
+training:
+  checkpoints:
+    every_n_epochs: 1
+  optimizers:
+    lr: 1.0e-3
+    patience: 2
+    beta1: 0.9
+    weight_decay: 1.0e-06
+    threshold: 3.0e-2
+    cooldown: 1
